@@ -1,4 +1,8 @@
 
+declare interface IOBJ {
+    [key: string]: any;
+}
+
 export interface IMyResponse {
     /**
      * 状态码

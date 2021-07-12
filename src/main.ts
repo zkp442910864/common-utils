@@ -1,9 +1,9 @@
 
-import * as utils from './utils';
+// import * as utils from './utils';
 // import * as ajax from './ajax';
 // console.log(utils)
 // console.log(ajax)
-window.utils = utils;
+// window.utils = utils;
 
 
 // utils 配置

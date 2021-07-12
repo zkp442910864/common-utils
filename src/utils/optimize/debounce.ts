@@ -19,10 +19,10 @@ export const debounce: TThrottleAndDebounce = (fn, interval = 300) => {
         // 获取最后的一个参数，是一个对象，有一个 isForceRun 值
         // 提供个强制执行的入口
         let isForceRun = false;
-		
-		if (arg && arg.length && typeof arg[0] === 'object') {
-			isForceRun = arg[0].isForceRun as boolean;
-		}
+
+        if (arg && arg.length && typeof arg[0] === 'object') {
+            isForceRun = arg[0].isForceRun as boolean;
+        }
 
         if (isForceRun) {
             t && clearTimeout(t);
