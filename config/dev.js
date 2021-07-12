@@ -21,7 +21,9 @@ const exportObj = {
 commonArr.forEach((item) => {
     exportObj.input = item.input;
 
-    if (!~item.output.file.indexOf('-min.js') && ~item.output.file.indexOf('-umd')) {
+    const fileName = item.output.file;
+    if (!~fileName.indexOf('-min.js') && ~fileName.indexOf('-umd')) {
+        item.output.file = fileName.replace('dist', 'static');
         item.output.sourcemap = false;
         exportObj.output.push(item.output);
     }
@@ -32,11 +34,11 @@ exportObj.plugins = [
     //     include: ['src/**/*.ts']
     // }),
     clear({
-        targets: ['dist']
+        targets: ['static']
     }),
     html({
         publicPath: pageFull(''),
-        template: () => templateStr,
+        template: () => templateStr
     }),
     json(),
     nodeResolve({
@@ -47,7 +49,7 @@ exportObj.plugins = [
     typescript(),
     serve({
         open: true, // 是否打开浏览器
-        contentBase: pageFull('dist'), // 入口html的文件位置
+        contentBase: pageFull('static'), // 入口html的文件位置
         historyApiFallback: true, // Set to true to return index.html instead of 404
         host: 'localhost',
         port: 999

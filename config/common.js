@@ -55,8 +55,12 @@ export const templateStr = (() => {
         <html >
             <head>
                 <title></title>
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
             </head>
             <body>
+                打开控制台调试
                 ${isBuild ? '' : devScript}
                 <script src="./common-utils-umd.js"></script>
             </body>
