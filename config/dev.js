@@ -18,10 +18,13 @@ const exportObj = {
     output: [],
 };
 
+// 过滤下数据，以及整合数据
 commonArr.forEach((item) => {
     exportObj.input = item.input;
 
     const fileName = item.output.file;
+
+    // 调试时候只需要 umd 未压缩的文件，所以其他的都过滤了
     if (!~fileName.indexOf('-min.js') && ~fileName.indexOf('-umd')) {
         item.output.file = fileName.replace('dist', 'static');
         item.output.sourcemap = false;

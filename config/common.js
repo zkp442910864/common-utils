@@ -6,10 +6,15 @@ export const pageFull = (url) => {
     return path.resolve('./', url);
 };
 
+// 需要生成的文件
 const inAndOut = () => {
+    // 主文件
     const mainFile = pageFull('src/main.ts');
+    // 输出文件名
     const fileName = 'common-utils';
+    // 输出类型
     const format = ['umd', 'es'];
+    // 类型所对应的固定参数
     const map = {
         umd: {
             sourcemap: true,
@@ -25,6 +30,7 @@ const inAndOut = () => {
 
     format.forEach((key) => {
         const old = map[key];
+        // 一个未压缩，一个压缩
         arr.push(
             {
                 input: mainFile,
@@ -47,7 +53,7 @@ const inAndOut = () => {
     return arr;
 };
 
-// 模板文件
+// 调试用 模板文件
 export const templateStr = (() => {
     const devScript = '<script src="http://localhost:35729/livereload.js?snipver=1"></script>';
     return `

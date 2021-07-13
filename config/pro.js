@@ -15,6 +15,7 @@ import {babel} from '@rollup/plugin-babel';
 const exportArr = [];
 // console.log(commonArr);
 commonArr.forEach((item) => {
+    // 判断是否需要压缩文件
     const isUglify = ~item.output.file.indexOf('-min.js');
 
     item.plugins = [
