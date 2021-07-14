@@ -34,20 +34,19 @@ const inAndOut = () => {
         arr.push(
             {
                 input: mainFile,
-                output: {
-                    ...old,
+                output: Object.assign({}, old, {
                     file: pageFull(`dist/${fileName}-${key}.js`),
                     sourcemap: false,
-                }
-            },
-            {
-                input: mainFile,
-                output: {
-                    ...old,
-                    file: pageFull(`dist/${fileName}-${key}-min.js`),
-                }
+                })
             }
         );
+
+        arr.push({
+            input: mainFile,
+            output: Object.assign({}, old, {
+                file: pageFull(`dist/${fileName}-${key}-min.js`),
+            })
+        })
     });
 
     return arr;

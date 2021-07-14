@@ -8,7 +8,7 @@ import {uglify} from 'rollup-plugin-uglify';
 
 import json from '@rollup/plugin-json';
 import typescript from '@rollup/plugin-typescript';
-import html from '@rollup/plugin-html';
+// import html from '@rollup/plugin-html';
 import {babel} from '@rollup/plugin-babel';
 
 
@@ -22,10 +22,10 @@ commonArr.forEach((item) => {
         clear({
             targets: ['dist']
         }),
-        html({
-            publicPath: pageFull(''),
-            template: () => templateStr,
-        }),
+        // html({
+        //     publicPath: pageFull(''),
+        //     template: () => templateStr,
+        // }),
         json(),
         nodeResolve({
             browser: true,
