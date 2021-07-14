@@ -9,6 +9,8 @@
     本地开发: yarn serve
 
     打包: yarn build
+
+    遇到报错的情况试试 npm
 ```
 
 ### 路径说明
