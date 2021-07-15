@@ -46,7 +46,7 @@ const inAndOut = () => {
             output: Object.assign({}, old, {
                 file: pageFull(`dist/${fileName}-${key}-min.js`),
             })
-        })
+        });
     });
 
     return arr;
