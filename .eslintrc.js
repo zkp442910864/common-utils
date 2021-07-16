@@ -78,7 +78,7 @@ module.exports = {
         'no-extend-native': ['off'], // 禁止扩展native对象
         'no-throw-literal': ['off'], // 禁止抛出字面量错误 throw "error";
         'no-extra-semi': ['error'], // 禁止多余的冒号
-        'no-extra-parens': ['error'], // 禁止非必要的括号
+        // 'no-extra-parens': ['error', 'functions', 'all', {enforceForNewInMemberExpressions: false, enforceForFunctionPrototypeMethods: false, returnAssign: false, nestedBinaryExpressions: false}], // 禁止非必要的括号
         // "camelcase": ["off"],//强制驼峰法命名
         'no-debugger': 1, // 禁止使用debugger
         quotes: [1, 'single'],//引号类型 `` "" ''

@@ -8,7 +8,9 @@ export const jsCopyObj: TJsCopyObj = (data: any, cache = []) => {
     }
 
     // 循环引用
-    const find = cache.find((i) => (i.old === data));
+    const find = cache.find((i) => {
+        return i.old === data;
+    });
     if (find) {
         return find.obj;
     }
