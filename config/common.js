@@ -10,6 +10,8 @@ export const pageFull = (url) => {
 const inAndOut = () => {
     // 主文件
     const mainFile = pageFull('src/main.ts');
+    // 插入文本 禁止eslint 提示 TODO: 不知道为啥引入文件时候，eslint检查了这文件
+    const banner = '/* eslint-disable */';
     // 输出文件名
     const fileName = 'common-utils';
     // 输出类型
@@ -20,10 +22,12 @@ const inAndOut = () => {
             sourcemap: true,
             format: 'umd',
             name: 'utils',
+            banner,
         },
         es: {
             sourcemap: true,
             format: 'es',
+            banner,
         }
     };
     const arr = [];

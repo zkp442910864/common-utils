@@ -1,20 +1,22 @@
 module.exports = {
-    root: true,
     env: {
-        browser: true
+        node: true,
+        browser: true,
+        commonjs: true,
+        amd: true,
+    },
+    extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended'
+    ],
+    parser: '@typescript-eslint/parser',
+    parserOptions: {
+        ecmaVersion: 12,
+        sourceType: 'module'
     },
     plugins: [
         '@typescript-eslint'
     ],
-    extends: [
-        'standard',
-        'plugin:@typescript-eslint/recommended'
-    ],
-    parserOptions: {
-        ecmaVersion: 2020
-    },
-    globals: {
-    },
     rules: {
         // 'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         // 'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
@@ -79,6 +81,8 @@ module.exports = {
         'no-extra-parens': ['error'], // 禁止非必要的括号
         // "camelcase": ["off"],//强制驼峰法命名
         'no-debugger': 1, // 禁止使用debugger
+        quotes: [1, 'single'],//引号类型 `` "" ''
+        'quote-props': ['error', 'as-needed'],//对象字面量中的属性名是否强制双引号
 
 
 
@@ -214,8 +218,6 @@ module.exports = {
         // "prefer-const": 0,//首选const
         // "prefer-spread": 0,//首选展开运算
         // "prefer-reflect": 0,//首选Reflect的方法
-        // "quotes": [1, "single"],//引号类型 `` "" ''
-        // "quote-props": [2, "always"],//对象字面量中的属性名是否强制双引号
         // "radix": 2,//parseInt必须指定第二个参数
         // "id-match": 0,//命名检测
         // "require-yield": 0,//生成器函数必须有yield
